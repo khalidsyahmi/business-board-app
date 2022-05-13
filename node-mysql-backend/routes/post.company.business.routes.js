@@ -1,8 +1,6 @@
 const express = require('express');
 
-//const db = require('../data/database');
-//const Company = require('../models/company.business.model');
-const postBusinessControllers = require('../../node-API-backend/controllers/post.business.controllers')
+const postBusinessControllers = require('../controllers/post.business.controllers')
 
 const router = express.Router();
 

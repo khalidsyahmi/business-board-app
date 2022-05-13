@@ -1,7 +1,6 @@
 const express = require('express');
 
-//const Company = require('../models/company.business.model');
-const getBusinessControllers = require('../../node-API-backend/controllers/get.business.controllers');
+const getBusinessControllers = require('../controllers/get.business.controllers');
 
 const router = express.Router();
 
