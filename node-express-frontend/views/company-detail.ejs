@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('includes/head', { title: companyDetail.title }) %>
+  <link rel="stylesheet" href="/styles/business.css">
+</head>
+
+<body>
+  <%- include('includes/header') %>
+  <main id="post-detail">
+    <h1><%= companyDetail.title %></h1>
+    <section id="post-meta">
+      <address><a href="mailto:<%= companyDetail.staff_email %>"><%= companyDetail.staff_name %></a></address> |
+      <time datetime="<%= companyDetail.date %>"><%= companyDetail.humanReadableDate %></time>
+    </section>
+    <hr>
+    <section>
+      <p id="body"><%= companyDetail.body %></p>
+    </section>
+  </main>
+</body>
+
+</html>

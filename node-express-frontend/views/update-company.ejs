@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('includes/head', { title: 'Update post' }) %>
+  <link rel="stylesheet" href="/styles/form.css">
+</head>
+
+<body>
+  <%- include('includes/header') %>
+  <main>
+    <h1>Update Company</h1>
+    <form action="/company/<%= post.idCompany %>/edit" method="POST">
+      <div class="form-control">
+        <label for="title">Company Name</label>
+        <input type="text" id="title" value="<%= post.title %>" name="title" required>
+      </div>
+      <div class="form-control">
+        <label for="summary">Business Type</label>
+        <input type="text" id="summary" value="<%= post.summary %>" name="summary" required maxlength="255">
+      </div>
+      <div class="form-control">
+        <label for="content">Business Summary</label>
+        <textarea id="content" name="content" required rows="5"><%= post.body %></textarea>
+      </div>
+      <button class="btn">Update Company</button>
+    </form>
+  </main>
+</body>
+
+</html>

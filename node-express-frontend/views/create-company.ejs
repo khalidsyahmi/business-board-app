@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('includes/head', { title: 'Add new post' }) %>
+  <link rel="stylesheet" href="/styles/form.css">
+</head>
+
+<body>
+  <%- include('includes/header') %>
+  <main>
+    <h1>Add a new company</h1>
+    <form action="/company-list" method="POST">
+      <div class="form-control">
+        <label for="title">Company</label>
+        <input type="text" id="title" name="title" required>
+      </div>
+      <div class="form-control">
+        <label for="summary">Business type</label>
+        <input type="text" id="summary" name="summary" required maxlength="255">
+      </div>
+      <div class="form-control">
+        <label for="content">Business summary</label>
+        <textarea id="content" name="content" required rows="5"></textarea>
+      </div>
+      <div class="form-control">
+        <label for="staff">Select Staff</label>
+        <select id="staff" name="staff">
+          <% for (const staff of staffs) { %>
+            <option value="<%= staff.idstaff %>"><%= staff.name %></option>
+          <% } %>
+        </select>
+      </div>
+      <button class="btn">Add Company</button>
+    </form>
+  </main>
+</body>
+
+</html>
