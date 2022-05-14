@@ -63,6 +63,10 @@ html {
   .btn.btn-alt:active {
     color:rgb(232, 90, 245);
   }
+
+  .btn-align{
+    margin-top: 1rem;
+  }
   
   /* Site-wide content / elements */
   
@@ -98,3 +102,4 @@ html {
   #main-header nav a:active {
     color:rgb(255, 217, 0);
   }
+

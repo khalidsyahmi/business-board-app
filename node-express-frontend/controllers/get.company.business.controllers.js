@@ -24,7 +24,7 @@ async function fetchAllCompany(req, res, next) {
   res.render('company-list', { posts: companies });
 }
 
-async function fetchAllStaff(req, res) {
+async function createCompany(req, res) {
 
   let response;
 
@@ -32,9 +32,9 @@ async function fetchAllStaff(req, res) {
     response = await fetch('http://localhost:3005/create-company');
   } catch (error) {
     console.log(response);
-    res.status(500).render('500');
+    //res.status(500).render('500');
     alert('Something went wrong!');
-    return;
+    return next(error);
   }
 
   if (!response.ok) {
@@ -56,9 +56,9 @@ async function fetchCompanyView(req, res) {
     response = await fetch(`http://localhost:3005/company/${req.params.id}}`);
   } catch (error) {
     //console.log(response);
-    res.status(500).render('500');
+    //res.status(500).render('500');
     alert('Something went wrong!');
-    return;
+    return next(error);
   }
 
   if (!response.ok) {
@@ -80,9 +80,9 @@ async function editCompany(req, res) {
     response = await fetch(`http://localhost:3005/company/${req.params.id}/edit`);
   } catch (error) {
     console.log(response);
-    res.status(500).render('500');
+    //res.status(500).render('500');
     alert('Something went wrong!');
-    return;
+    return next(error);
   }
 
   if (!response.ok) {
@@ -98,7 +98,7 @@ async function editCompany(req, res) {
 
 module.exports = {
   fetchAllCompany: fetchAllCompany,
-  fetchAllStaff: fetchAllStaff,
+  createCompany: createCompany,
   fetchCompanyView: fetchCompanyView,
   editCompany:editCompany
 }

@@ -2,8 +2,10 @@ const express = require('express');
 
 const db = require('./data/database');
 
-const businessRoutes = require('./routes/get.company.business.routes');
-const companyBusinessRoutes = require('./routes/post.company.business.routes');
+const getCompanyRoutes = require('./routes/get.company.business.routes');
+const postCompanyRoutes = require('./routes/post.company.business.routes');
+const getStaffRoutes = require('./routes/get.staff.routes');
+const postStaffRoutes = require('./routes/post.staff.routes');
 
 const enableCors = require('./middlewares/cors');
 
@@ -12,8 +14,10 @@ const app = express();
 app.use(enableCors);
 app.use(express.json());
 
-app.use(businessRoutes);
-app.use(companyBusinessRoutes);
+app.use(getCompanyRoutes);
+app.use(postCompanyRoutes);
+app.use(getStaffRoutes);
+app.use(postStaffRoutes);
 
 //response as json instead of rendering
 app.use(function (error, req, res, next) {

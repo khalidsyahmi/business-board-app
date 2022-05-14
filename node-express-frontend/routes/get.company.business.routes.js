@@ -11,7 +11,7 @@ router.get('/', function (req, res) {
 
 router.get('/company-list', getBusinessControllers.fetchAllCompany);
 
-router.get('/create-company', getBusinessControllers.fetchAllStaff);
+router.get('/create-company', getBusinessControllers.createCompany);
 // company view
 router.get('/company/:id', getBusinessControllers.fetchCompanyView);
 //company edit view

@@ -1,0 +1,11 @@
+<article class="post-item">
+  <h2><%= staff.role %></h2>
+  <p class="post-item-author">By <%= staff.name %></p>
+  <address><a href="mailto:<%= staff.email %>"></a></address>
+  <p><%= staff.bio %></p>
+  <div class="post-actions">
+    <div class="btn-align">
+      <a class="btn" href="/company/<%= staff.idstaff %>/edit">Edit Staff</a>
+    </div>
+  </div>
+</article>

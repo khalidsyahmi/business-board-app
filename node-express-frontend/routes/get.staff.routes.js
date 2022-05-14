@@ -11,9 +11,9 @@ const router = express.Router();
  */
 router.get('/staff-list', getStaffControllers.fetchAllStaff);
 
-router.get('/create-staff', getStaffControllers.createStaff);
+router.get('/create-staff', getStaffControllers.createStaff); //current
 
-router.get('/staff/:id', getStaffControllers.viewStaffProfile);
+//router.get('/staff/:id', getStaffControllers.viewStaffProfile);//omitted
 
 router.get('/staff/:id/edit', getStaffControllers.viewEditStaff);
 

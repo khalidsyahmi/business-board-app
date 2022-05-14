@@ -16,9 +16,9 @@ class Company {
 
         const [posts] = await db.getDb().query(query);
 
-        /*        return posts.map(function (posts) {
-                   return new posts(posts.title, posts.summary, posts.body, posts.id);
-               }); */
+        /* return posts.map(function (posts) {
+            return new posts(posts.title, posts.summary, posts.body, posts.id);
+        }); */
         return posts;
     }
 

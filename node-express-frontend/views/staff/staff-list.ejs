@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../includes/head', { title: 'All Staff' }) %>
+  <link rel="stylesheet" href="/styles/staff.css">
+</head>
+
+<body>
+  <%- include('../includes/header') %>
+  <main id="all-posts">
+    <h1>Staff list</h1>
+    <% if (!staffs || staffs.length === 0) { %>
+      <p>No Staff found - Go ahead and create new staff</p>
+      <a class="btn" href="/create-staff">Create a new Staff</a>
+    <% } else { %>
+      <ol id="posts-list">
+        <% for (const staff of staffs) { %>
+          <li>
+            <%- include('./staff-item', { staff: staff }) %>
+          </li>
+        <% } %>
+      </ol>
+    <% } %>
+  </main> 
+</body>
+
+</html>

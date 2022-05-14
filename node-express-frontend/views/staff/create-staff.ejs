@@ -3,7 +3,6 @@
   <head>
     <%- include('../includes/head', { title: 'Create new Staff' }) %>
     <link rel="stylesheet" href="/styles/form.css" />
-    <link rel="stylesheet" href="/styles/staff.css" />
   </head>
 
   <body>
@@ -11,7 +10,6 @@
     <main>
       <h1>Add a new staff</h1>
       <form action="/staff-list" method="POST">
-        <div class="form-control">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required />
         </div>
@@ -30,8 +28,6 @@
         <div class="post-actions">
         <button class="btn">Save Staff</button>
       </form>
-        <a class="btn" href="/">Edit Staff</a>
-      </div>
     </main>
   </body>
 </html>
