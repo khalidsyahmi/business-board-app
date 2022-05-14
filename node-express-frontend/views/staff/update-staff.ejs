@@ -11,27 +11,29 @@
   <%- include('../includes/header') %>
   <main>
     <h1>Update Staff</h1>
-
-    <form action="/company/../edit" method="POST">
-      <div class="form-control">
-        <label for="title">Company Name</label>
-        <input type="text" id="title" value=".." name="title" required>
-      </div>
-      <div class="form-control">
-        <label for="summary">Business Type</label>
-        <input type="text" id="summary" value=".." name="summary" required maxlength="255">
-      </div>
-      <div class="form-control">
-        <label for="content">Business Summary</label>
-        <textarea id="content" name="content" required rows="5">..</textarea>
-      </div>
+    <form action="/staff/<%= staffProfile.idstaff %>/edit" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" value="<%= staffProfile.name %>" name="name" required />
+    </div>
+    <div class="form-control">
+      <label for="email">Email</label>
+      <input type="email" id="email" value="<%= staffProfile.email %>" name="email" required />
+    </div>
+    <div class="form-control">
+      <label for="role">Role</label>
+      <input type="text" id="role" value="<%= staffProfile.role %>" name="role" required />
+    </div>
+    <div class="form-control">
+      <label for="bio">Bio</label>
+      <textarea id="bio" name="bio" rows="5"><%= staffProfile.bio %></textarea>
+    </div>
       <div class="spc-btn-control">
           <button class="btn">Update Staff</button>
-          <form action="/company/id../delete" method="POST">
-            <button class="btn btn-alt-delete">Delete Staff</button>
-          </form>
-        </div>
-      </form>
+        </form>
+        <form action="/staff/<%= staffProfile.idstaff %>/delete" method="POST">
+          <button class="btn btn-alt-delete">Delete Staff</button>
+        </form>
+      </div>
   </main>
 </body>
 

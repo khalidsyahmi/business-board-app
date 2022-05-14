@@ -9,10 +9,10 @@ class Staff {
     }
 
     static async fetchAllStaff() {
-/*         const query = `
-        SELECT staff.*, staff.name AS staff_name FROM staff 
-        INNER JOIN staff ON staff.idstaff = company.staff_id 
-        `;     */
+        /*         const query = `
+                SELECT staff.*, staff.name AS staff_name FROM staff 
+                INNER JOIN staff ON staff.idstaff = company.staff_id 
+                `;     */
         const query = `
         SELECT * FROM staff
         `;
@@ -41,14 +41,6 @@ class Staff {
             return posts;
         } */
 
-/*     async fetchStaffEdit() {
-        const query = `
-        SELECT * FROM company WHERE idCompany = ?
-      `;
-        const [posts] = await db.getDb().query(query, [this.id]);
-        return posts;
-    } */
-
     async saveCreate() {
         const data = [
             this.name,
@@ -63,17 +55,40 @@ class Staff {
         return result;
     }
 
-/*     async saveEdit() {
+
+
+}
+
+class StaffEdit {
+    constructor(name, email, role, bio, id) {
+        this.name = name;
+        this.email = email;
+        this.role = role;
+        this.bio = bio;
+        this.id = id;
+    }
+
+
+    async fetchStaffEdit() {
         const query = `
-            UPDATE company SET title = ?, summary = ?, body = ?
-            WHERE idCompany = ?
+        SELECT * FROM staff WHERE idstaff = ?
+      `;
+        const [staffs] = await db.getDb().query(query, [this.id]);
+        return staffs;
+    }
+
+    async saveEdit() {
+        const query = `
+            UPDATE staff SET name = ?, email = ?, role = ?, bio = ?
+            WHERE idstaff = ?
           `;
 
         const result = await db.getDb().query(query, [
-            this.title,
-            this.summary,
-            this.body,
-            this.id,
+            this.name,
+            this.email,
+            this.role,
+            this.bio,
+            this.id
         ]);
         return result;
     }
@@ -83,10 +98,12 @@ class Staff {
             return;
         }
 
-        const result = await db.getDb().query('DELETE FROM company WHERE idCompany = ?', [this.id]);
+        const result = await db.getDb().query('DELETE FROM staff WHERE idstaff = ?', [this.id]);
         return result;
-    } */
-
+    }
 }
 
-module.exports = Staff;
+module.exports = {
+    Staff,
+    StaffEdit
+};

@@ -5,8 +5,8 @@ async function fetchAllStaff(req, res, next) {
 
     let staffs;
     try {
-        staffs = await Staff.fetchAllStaff();
-        console.log(staffs);
+        staffs = await Staff.Staff.fetchAllStaff();
+        //console.log(staffs);
     } catch (error) {
         return next(error);
     }
@@ -14,16 +14,14 @@ async function fetchAllStaff(req, res, next) {
     res.json({ staffs: staffs });
 }
 
-/////////////////////////////////////////////
-
-async function createStaff(req, res) {
+/* async function createStaff(req, res) {
 
     const staffs = await Company.fetchAllStaff();
 
     res.json({ staffs: staffs });
-}
+} */
 
-async function fetchCompanyView(req, res) {
+/* async function fetchCompanyView(req, res) {
 
     const companies = new Company(null, null, null, req.params.id);
     const company = await companies.fetchCompany();
@@ -47,24 +45,25 @@ async function fetchCompanyView(req, res) {
 
     //res.render('company-detail', { companyDetail: postData });
     res.json({ companyDetail: companyData });
-}
+} */
 
-async function editCompany(req, res) {
+async function editStaff(req, res) {
 
-    const company = new Company(null, null, null, req.params.id);
-    const posts = await company.fetchCompanyEdit();
+    const staffs = new Staff.StaffEdit(null, null, null, null, req.params.id);
+    const staff = await staffs.fetchStaffEdit();
+    console.log(staff[0]);
 
-    if (!posts || posts.length === 0) {
+    if (!staff || staff.length === 0) {
         return res.status(404).render('404');
     }
 
     //res.render('update-company', { post: posts[0] });
-    res.json({ message: 'Viewed company successfully!', view: posts[0] });
+    res.json({ message: 'Viewed staff edit successfully!', editStaff: staff[0] });
 }
 
 module.exports = {
     fetchAllStaff: fetchAllStaff,
-    createStaff: createStaff,
-    fetchCompanyView: fetchCompanyView,
-    editCompany: editCompany
+    /*   createStaff: createStaff, */
+    /* fetchCompanyView: fetchCompanyView, */
+    editStaff: editStaff
 }

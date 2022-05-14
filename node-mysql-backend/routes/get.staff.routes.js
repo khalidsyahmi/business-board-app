@@ -12,8 +12,9 @@ router.get('/staff-list', getStaffControllers.fetchAllStaff);
 
 /* router.get('/create-company', getBusinessControllers.fetchAllStaff);
 // company view
-router.get('/company/:id', getBusinessControllers.fetchCompanyView);
+router.get('/company/:id', getBusinessControllers.fetchCompanyView); */
 //company edit view 
-router.get('/company/:id/edit', getBusinessControllers.editCompany);
- */
+
+router.get('/staff/:id/edit', getStaffControllers.editStaff);
+
 module.exports = router;

@@ -44,12 +44,13 @@ async function updateStaff(req, res) {
   let response;
 
   try {
-    response = await fetch(`http://localhost:3005/company/${updateId}/edit`, {
+    response = await fetch(`http://localhost:3005/staff/${updateId}/edit`, {
       method: "PATCH",
       body: JSON.stringify({
-        title: req.body.title,
-        summary: req.body.summary,
-        content: req.body.content,
+        name: req.body.name,
+        email: req.body.email,
+        role: req.body.role,
+        bio: req.body.bio,
         id: updateId
       }),
       headers: {
@@ -70,7 +71,7 @@ async function updateStaff(req, res) {
   console.log(response);
   await response.json();
 
-  res.redirect('/company-list');
+  res.redirect('/staff-list');
 }
 
 async function deleteStaff(req, res) {
@@ -78,7 +79,7 @@ async function deleteStaff(req, res) {
   let response;
 
   try {
-    response = await fetch(`http://localhost:3005/company/${req.params.id}/delete`, {
+    response = await fetch(`http://localhost:3005/staff/${req.params.id}/delete`, {
       method: "DELETE"
     });
 
@@ -95,7 +96,7 @@ async function deleteStaff(req, res) {
 
   console.log(response);
   await response.json();
-  res.redirect('/company-list');
+  res.redirect('/staff-list');
 }
 
 module.exports = {

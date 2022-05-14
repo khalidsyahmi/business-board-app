@@ -40,7 +40,8 @@
 .spc-btn-control {
   margin: 0.5rem 0;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  
 }
 
 /* special delete button */

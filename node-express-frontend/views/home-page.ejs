@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('includes/head', { title: 'Home' }) %>
+    <link rel="stylesheet" href="/styles/business.css" />
+    <link rel="stylesheet" href="/styles/home.css">
+  </head>
+
+  <body>
+    <%- include('includes/header') %>
+    <main id="all-posts">
+      <h1>Create Company or Staff</h1>
+
+        <ul class="home-align">
+          <div class="home-grid">
+            <li>
+              <a href="/create-company">Create Company</a>
+            </li>
+          </div>
+          <div class="home-grid">
+            <li>
+              <a href="/create-staff">Create Staff</a>
+            </li>
+          </div>
+          <div class="home-grid">
+            <li>
+              <a href="/company-list">Company List</a>
+            </li>
+          </div>
+          <div class="home-grid">
+            <li>
+              <a href="/staff-list">Staff List</a>
+            </li>
+          </div>
+        </ul>
+
+    </main>
+  </body>
+</html>

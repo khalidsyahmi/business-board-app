@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/', function (req, res) {
   //go to home page
-  res.redirect('/company-list');
+  res.render('home-page');
 });
 
 router.get('/company-list', getBusinessControllers.fetchAllCompany);

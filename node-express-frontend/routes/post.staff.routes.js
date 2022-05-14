@@ -7,9 +7,9 @@ const router = express.Router();
 //updated endpoints
 router.post('/staff-list', postStaffControllers.createStaff);
 
-/* router.post('/company/:id/edit', postBusinessControllers.updateCompany);
+router.post('/staff/:id/edit', postStaffControllers.updateStaff);
 
-router.post('/company/:id/delete', postBusinessControllers.deleteCompany);
- */
+router.post('/staff/:id/delete', postStaffControllers.deleteStaff);
+
 
 module.exports = router;

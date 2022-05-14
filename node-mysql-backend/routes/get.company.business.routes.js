@@ -4,9 +4,9 @@ const getBusinessControllers = require('../controllers/get.business.controllers'
 
 const router = express.Router();
 
-router.get('/', function (req, res) {
+/* router.get('/', function (req, res) {
   res.redirect('/company-list');
-});
+}); */
 
 router.get('/company-list', getBusinessControllers.fetchAllCompany);
 
