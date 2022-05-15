@@ -18,3 +18,23 @@ BACKEND
   d. Delete
       i. Able to delete staff by their ID
       ii. Able to delete company by their ID
+
+
+Sample Pages:
+
+list page
+
+![alt image](/screen/dummy/companylist.png)
+
+create page
+
+![alt image](/screen/dummy/createcompany.png)
+
+profile page
+
+![alt image](/screen/dummy/companyview.png)
+
+edit page
+
+![alt image](/screen/dummy/staffeditdelete.png)
+
