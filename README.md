@@ -22,5 +22,19 @@ BACKEND
 
 Sample Pages:
 
+list page
+
+![alt image](/screen/dummy/companylist.png)
+
+create page
+
 ![alt image](/screen/dummy/createcompany.png)
+
+profile page
+
+![alt image](/screen/dummy/companyview.png)
+
+edit page
+
+![alt image](/screen/dummy/staffeditdelete.png)
 
