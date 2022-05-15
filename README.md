@@ -10,14 +10,14 @@ BACKEND
   b. Staff
 3. API Specifics
   a. Create API 
-      i. must be able to create Company and Staff
+    i. must be able to create Company and Staff
   b. Read
-     i. Able to search by ID or Company Name
+    i. Able to search by ID or Company Name
   c. Update
-      i. Other Staff able to edit from company to another company
+    i. Other Staff able to edit from company to another company 
   d. Delete
-      i. Able to delete staff by their ID
-      ii. Able to delete company by their ID
+    i. Able to delete staff by their ID
+    ii. Able to delete company by their ID
 
 
 Sample Pages:
