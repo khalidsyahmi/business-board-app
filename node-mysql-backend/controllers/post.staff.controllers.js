@@ -1,10 +1,12 @@
+//update the appropriate class to each methods
+
 const Staff = require('../models/staff.model');
 
 async function createsStaff(req, res, next) {
 
   let staff;
   try {
-    staff = new Staff(req.body.name, req.body.email, req.body.role, req.body.bio);
+    staff = new Staff.Staff(req.body.name, req.body.email, req.body.role, req.body.bio);
     console.log(staff);
     staff.saveCreate();
   } catch (error) {

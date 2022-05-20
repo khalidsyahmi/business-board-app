@@ -8,9 +8,9 @@ let pool;
 async function initDb() {
   pool = mysql.createPool({
     host: 'localhost',
-    database: 'schema-name',
+    database: 'forum-mod-app',
     user: 'root',
-    password: 'your-pw-here'
+    password: 'khalid71096!'
   });
 }
 
